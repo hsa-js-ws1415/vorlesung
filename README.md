@@ -65,6 +65,10 @@ Raum J 2.01
 - [Set up git](https://help.github.com/articles/set-up-git)
 - `git clone <repo url>`
 
+### [SourceTree](http://www.sourcetreeapp.com/)
+
+- Git-GUI für alle Platformen (Win, OSX, Linux)
+- 
 ## Tutorials
 
 ### JavaScript
