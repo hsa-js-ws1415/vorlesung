@@ -17,7 +17,7 @@ Raum J 2.01
 ## Agenda
 
 - Einführung (17.10) ([Skript](http://hsa-js-ws1415.github.io/vorlesung/1-einfuehrung/#1))
-- Basics (17.10) ([Skript](http://hsa-js-ws1415.github.io/vorlesung/1-basics/#1))
+- Basics (17.10) ([Skript](http://hsa-js-ws1415.github.io/vorlesung/2-basics/#1))
 - Prototypes (24.10)
 - Callbacks (24.10)
 - Promises (31.10)
