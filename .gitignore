@@ -28,4 +28,4 @@ node_modules
 .lock-wscript
 
 # Dont commit workshop solutions
-*.done.js
+*.done
