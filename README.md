@@ -1,4 +1,4 @@
-vorlesung
-=========
+lectures
+========
 
-Das Skript zur Vorlesung
+Die Slides zur Vorlesung

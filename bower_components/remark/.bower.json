@@ -1,0 +1,41 @@
+{
+  "name": "remark",
+  "homepage": "http://remarkjs.com/",
+  "authors": [
+    "Ole Petter Bang <olepbang@gmail.com>"
+  ],
+  "description": "A simple, in-browser, markdown-driven slideshow tool.",
+  "main": "out/remark.js",
+  "keywords": [
+    "Markdown",
+    "Slides"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".gitignore",
+    ".gitmodules",
+    ".jshintignore",
+    ".jshintrc",
+    "HISTORY.md",
+    "LICENSE",
+    "make.js",
+    "Makefile",
+    "package.json",
+    "bower_components",
+    "node_modules",
+    "src",
+    "test",
+    "vendor",
+    "out/tests.js"
+  ],
+  "version": "0.7.0",
+  "_release": "0.7.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.7.0",
+    "commit": "6b7a2ddc2af5a942fc24aed8aa55f7c844d5c996"
+  },
+  "_source": "git://github.com/gnab/remark.git",
+  "_target": "^0.7.0",
+  "_originalSource": "remark"
+}

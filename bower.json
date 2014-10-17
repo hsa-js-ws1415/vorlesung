@@ -1,0 +1,23 @@
+{
+  "name": "lectures",
+  "version": "0.0.0",
+  "authors": [
+    "Johannes Ewald <johannes.ewald@peerigon.com>"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "license": "Unlicense",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "remark": "^0.7.0",
+    "mocha": "~1.21.5",
+    "chai": "~1.9.2"
+  }
+}

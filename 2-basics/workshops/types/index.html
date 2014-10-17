@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Types</title>
+    <meta charset="utf-8"/>
+    <link href="../../../bower_components/mocha/mocha.css" rel="stylesheet">
+    <script src="../../../bower_components/chai/chai.js"></script>
+    <script src="../../../bower_components/mocha/mocha.js"></script>
+</head>
+<body>
+    <div id="mocha"></div>
+    <script>
+        mocha.setup("bdd");
+
+        var expect = chai.expect;
+    </script>
+    <script src="types.done.js"></script>
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>

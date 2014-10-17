@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Types</title>
+    <meta charset="utf-8"/>
+    <link href="../../../mocha.css" rel="stylesheet">
+    <script src="../../../chai.js"></script>
+    <script src="../../../mocha.js"></script>
+</head>
+<body>
+    <div id="mocha"></div>
+    <script>
+        mocha.setup("bdd");
+
+        var expect = chai.expect;
+    </script>
+    <script src="functions.done.js"></script>
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>

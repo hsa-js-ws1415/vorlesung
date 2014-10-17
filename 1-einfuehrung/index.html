@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html id="slide">
+  <head>
+    <title>Einführung</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../styles.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+<textarea id="source">
+
+    name: cover
+    background-image: url(../assets/img/background.png)
+
+    # Einführung
+
+    .slide-cover[
+    JavaScript<br>
+    Wintersemester 2014/2015<br>
+    HS Augsburg
+    
+    Johannes Ewald<br>
+    Paul Torka<br>
+    ]
+
+    ---
+    layout: true
+    class: center, middle
+
+    .slide-header-left[
+    Einführung
+    ]
+    .slide-header-right[
+    JavaScript WS 14/15 HSA
+    ]
+    
+    ---
+    
+    # Über uns
+    
+    ---
+    
+    <img src="../assets/img/johannes.jpg" width="250" />
+
+    Johannes Ewald<br>
+    Interaktive Medien BA
+    
+    ---
+    
+    <img src="../assets/img/paul.jpg" width="250" />
+    
+    Paul Torka<br>
+    Wirtschaftsinformatik BSc
+
+    ---
+
+    <img src="../assets/img/roomieplanet-logo.png" height="150" /><br>
+
+    - Plattform zur WG-Verwaltung
+    - Projektarbeit über 2 Semester
+    - siebenköpfiges Team aus WI/IAM
+
+    ---
+    
+    <img src="../assets/img/peerigon-logo.png" width="500" />
+    
+    ---
+    
+    <img src="../assets/img/peerigon-devices.png" style="height: 30vh; margin-bottom: -5vh" />
+    
+    > Peerigon hilft dir und deinen Freunden, Freizeitprojekte gemeinsam auf die Beine zu stellen.
+    
+    ---
+
+    - Mobile-App
+    - Pure JavaScript, HTML & CSS
+    - Backend mit Node.js
+    - Datenschutz!
+    - Werbefreiheit!
+    
+    Mehr auf [peerigon.com](https://peerigon.com)
+
+    ---
+    
+    ## Förderungen für Existenzgründer
+    
+    - [Exist-Stipendium](https://www.exist.de/)
+    - [Flügge-Stipendium](http://www.fluegge-bayern.de/)
+
+    ---
+    
+    # Organisatorisches
+    
+    ---
+    
+    ## Teilnehmerliste
+    
+    ---
+    
+    ## Ablauf
+    
+    - Theorie gepaart mit vielen Übungen
+    - 3 Einzel-Abgaben
+    - 1 Team-Abgabe (Projektarbeit)
+    
+    ---
+    
+    ## Projektarbeit
+    
+    - 2er-Teams
+    - freie Themenwahl
+    - parallel zur Vorlesung
+    - von 31.10 bis 24.12
+    - Abgabe der Projektarbeit via [GitHub](https://github.com/)
+    
+    ---
+    
+    ## Vorläufige Agenda
+    
+    - Einführung
+    - Basics
+    - Prototypes
+    - Callbacks
+    - Promises
+    - Modules
+    - DOM
+    - Harmony (ECMAScript 6)
+
+    ---
+    
+    # Fangen wir an!
+    
+    ---
+    
+    # Die gute Nachricht:<br>JavaScript ist leicht zu lernen.
+    
+    ---
+    
+    # Die schlechte Nachricht:<br>JavaScript ist schwer zu verstehen.
+    
+    ---
+    
+    # Kleiner Rückblick
+    
+    <img src="../assets/img/netscape-screenshot.jpg" style="height: 40vh" />
+    
+    ---
+    
+    - wurde 1995 unter dem Namen LiveScript von Netscape entwickelt
+    - bald darauf aus Marketinggründen in JavaScript umbenannt
+    - 1996 von Microsoft unter dem Namen JScript adoptiert
+    - wird seit Ende 1996 unter dem Namen [ECMAScript](http://es5.github.io/) standardisiert
+    
+    ---
+    
+    # JavaScript ist einfach, weil...
+
+    - vertraute, Java-ähnliche Syntax
+    - funktioniert out-of-the-box
+    - copy & paste
+    - dynamische Typisierung
+    
+    ---
+    
+    # JavaScript ist schwer, weil...
+
+    - verwirrende Datentypen
+    - unintuitive Prototypen-Vererbung
+    - historisch gewachsene APIs (DOM)
+    - viele verschiedene JS-Engines
+    
+    ---
+    
+    Doch das größte Problem ist...
+    
+    ---
+    
+    > Java and JavaScript are similar like Car and Carpet are similar.
+    <cite>Someone on the internet</cite>
+    
+    ---
+    
+    | Java | JavaScript |
+    |-------------------|
+    | Kompiliert | Interpretiert |
+    | Statische Typisierung | Dynamische Typisierung |
+    | Klassen-Vererbung | Prototypen-Vererbung |
+    
+    ---
+    
+    Wo wird JavaScript heute hauptsächlich ausgeführt?
+    
+    ---
+    
+    <img src="../assets/img/browsers-logos.png" style="height: 20vh">
+    <img src="../assets/img/nodejs-logo.svg" style="height: 10vh">
+    
+    ---
+    
+    <img src="../assets/img/environment.svg">
+    
+    ---
+    
+    ## Native
+    ist als ECMAScript standartisiert
+    
+    ## Host
+    beinhaltet z.B. das DOM, welches von der W3C spezifiziert wird
+    
+    ---
+    
+    # Bekannte JavaScript-Engines
+    
+    | Name | Hosts |
+    |-------------------|
+    | SpiderMonkey | <img src="../assets/img/firefox-logo.png" style="height: 1em; margin-bottom: -0.2em"> |
+    | v8 | <img src="../assets/img/chrome-logo.png" style="height: 1em; margin-bottom: -0.2em"> <img src="../assets/img/nodejs-logo-small.svg" style="height: 1em; margin-bottom: -0.2em"> <img src="../assets/img/opera-logo.png" style="height: 1em; margin-bottom: -0.2em"> |
+    | Chakra | <img src="../assets/img/ie-logo.png" style="height: 1em; margin-bottom: -0.2em"> |
+    | Nitro | <img src="../assets/img/safari-logo.png" style="height: 1em; margin-bottom: -0.2em"> |
+    
+    <cite>http://en.wikipedia.org/wiki/List_of_ECMAScript_engines</cite>
+    
+    ---
+    
+    # Übung: Hello World via Console
+    
+    ---
+    
+    # Übung: Hello World via JS-File
+    
+</textarea>
+    <script src="../bower_components/remark/out/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        highlightStyle: "ir_black"
+        //,ratio: '16:9'
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html id="slide">
+  <head>
+    <title>Basics</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../styles.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+<textarea id="source">
+
+name: cover
+background-image: url(../assets/img/background.png)
+
+# Basics
+
+.slide-cover[
+JavaScript<br>
+Wintersemester 2014/2015<br>
+HS Augsburg
+
+Johannes Ewald<br>
+Paul Torka<br>
+]
+
+---
+layout: true
+class: center, middle
+
+.slide-header-left[
+Basics
+]
+.slide-header-right[
+JavaScript WS 14/15 HSA
+]
+
+---
+
+<img src="../assets/img/the-good.jpg" style="height: 30vh">
+
+# Syntax
+<cite>https://developer.mozilla.org/en-US/docs/JavaScript/Reference</cite>
+
+---
+
+## Whitespace
+
+- hat keine spezielle Bedeutung
+- an manchen Stellen erforderlich (z.B. nach `var` statement)
+- Kommentare mit `//` oder `/* */` möglich
+
+---
+
+## Reserved Words
+
+<small>
+.left[
+`break case catch continue debugger default delete do else finally for function if in instanceof new return switch this throw try typeof var void while with class enum export extends import super implements interface let package private protected public static yield null true false`
+]
+</small>
+
+---
+
+<cite>https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Reserved_Words</cite>
+
+---
+
+## Statements
+
+### `var`
+
+```javascript
+var myVariable1;
+var myVariable2;
+var otherVar1, otherVar2, otherVar3;
+```
+
+Hoisting (engl: "hochziehen") beachten!
+
+---
+
+### `if`
+
+```javascript
+if (myNumber === 1) {
+    ...
+} else if (myNumber === 2) {
+    ... 
+} else {
+    ...
+}
+```
+
+---
+
+### `switch/case/break/default`
+
+```javascript
+switch (myNumber) {
+    case 1:
+        ...
+        break;
+    case 2:
+        ...
+        break;
+    default:
+        ...
+}
+```
+
+---
+
+### `while`
+
+
+```javascript
+while (myNumber &lt; 1) {
+    ...
+}
+```
+
+### `do while`
+
+```javascript
+do {
+    ...
+} while (myNumber &lt; 1)
+```
+
+---
+
+### `for`
+
+```javascript
+for (i = 0; i &lt; myArr.length; i++) {
+    ...
+}
+```
+
+---
+
+### `for in`
+
+```javascript
+for (key in myObj) {
+    ...
+}
+```
+
+[Nicht auf Arrays anwenden!](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+
+---
+
+### `continue`
+
+```javascript
+while (myNumber &lt; 1) {
+    continue;
+}
+```
+
+---
+
+### `break`
+
+```javascript
+while (myNumber &lt; 1) {
+    break;
+}
+```
+
+---
+
+### Block labels
+
+```javascript
+a: {
+    ...
+}
+```
+
+---
+
+Vor allem in Verbindung mit `continue` und `break` sinnvoll
+
+```javascript
+a: for (i = 0; i &lt; 2; i++) {
+    b: for (j = 0; i &lt; 2; j++) {
+        break a;
+    }
+}
+```
+
+---
+
+### `try throw catch finally`
+
+```javascript
+try {
+    throw new Error("Oh noez!");
+} catch (err) {
+    ...
+} finally {
+    ...
+}
+```
+
+---
+
+### Hinweis
+
+Terminierung der Statements mit `;` ist optional, aber dringend empfohlen
+
+---
+
+## Operatoren
+
+---
+
+### Arithmetic
+
+`+ - * / % ++ --`
+
+---
+
+### Assignment
+
+`= += -= *= /= %=`
+
+---
+
+### Comparison
+
+`== != === !== > >= &lt; &lt;=`
+
+---
+
+### Logical
+
+`&& || !`
+
+---
+
+### String Concatination
+
+`+ +=`
+
+---
+
+### Special
+
+`delete new typeof instanceof`
+
+---
+
+<img src="../assets/img/the-bad.jpg" style="height: 30vh">
+
+# Typen
+
+---
+
+## Non-values
+
+`undefined null`
+
+---
+
+### `undefined`
+
+```javascript
+> typeof a
+"undefined"
+```
+
+```javascript
+> var a;
+> typeof a
+"undefined"
+```
+
+```javascript
+> var a = undefined;
+> typeof a
+"undefined"
+```
+
+---
+
+### `null`
+
+```javascript
+> var a = null;
+> typeof a
+"object"
+> a instanceof Object
+false
+```
+
+---
+
+### Spoiler
+
+Der `typeof`- und `instanceof`-Operator funktionieren nicht, wie erwartet...
+
+---
+
+## Primitives
+
+`boolean number string`
+
+---
+
+### `boolean`
+
+```javascript
+var a = true;
+var b = false;
+```
+
+```javascript
+> typeof a
+"boolean"
+> a instanceof Boolean
+false
+```
+
+---
+
+### `number`
+
+.flex-ltr[
+```javascript
+var a = 3;
+var b = 0.2;
+var c = .2; // = 0.2
+```
+
+```javascript
+var d = 2.; // = 2
+var e = 3e4; // = 30000
+var f = 0xff; // = 255
+```
+]
+
+
+```javascript
+> typeof a
+"number"
+> a instanceof Number
+false
+```
+
+---
+
+.alert[
+### Achtung
+]
+
+Oktale sind momentan noch unterstützt, aber deprecated
+
+```javascript
+var a = 010; // = 8
+```
+
+---
+
+### `string`
+
+```javascript
+var a = "hello";
+var b = 'hello';
+```
+
+```javascript
+> typeof a
+"string"
+> a instanceof String
+false
+```
+
+---
+
+Escaping
+
+```javascript
+var a = "Octocat says: \"Whats's up?\"";
+var b = 'Octocat says: "What\'s up?"';
+```
+
+---
+
+.alert[
+### Achtung
+]
+
+Die Konstruktoren `Boolean`, `Number` und `String` erzeugen **keine** Primitives!
+
+---
+
+```javascript
+> var a = 3;
+> var b = new Number(3);
+```
+
+```javascript
+> a + b
+6
+```
+
+.flex-ltr[
+```javascript
+> typeof a
+"number"
+> typeof b
+"object"
+```
+ .flex-grow-2[
+```javascript
+> a instanceof Number
+false
+> b instanceof Number
+true
+```
+]
+
+```javascript
+> a == b
+true
+> a === b
+false
+```
+]
+
+---
+
+```javascript
+> var a = "a";
+> var b = new String("b");
+```
+
+```javascript
+> a + b
+"ab"
+```
+
+.flex-ltr[
+```javascript
+> typeof a
+"string"
+> typeof b
+"object"
+```
+ .flex-grow-2[
+```javascript
+> a instanceof String
+false
+> b instanceof String
+true
+```
+]
+
+```javascript
+> a == b
+true
+> a === b
+false
+```
+]
+
+---
+
+## Complex types
+
+`Array Object Function RegExp`
+
+---
+
+### `Array`
+
+```javascript
+var a = [1, 2, 3];
+var b = [
+    1,
+    2,
+    3
+];
+```
+
+```javascript
+> typeof a
+"object"
+> a instanceof Array
+true
+> a instanceof Object
+true
+```
+
+---
+
+### `Object`
+
+```javascript
+var a = { a: "A", b: "B", c: "C" };
+var b = {
+    "a": "A",
+    "b": "B",
+    "c": "C"
+};
+```
+
+```javascript
+> typeof a
+"object"
+> a instanceof Object
+true
+```
+
+---
+
+### `Function`
+
+```javascript
+var a = function () {};
+```
+
+```javascript
+> typeof a
+"function"
+> a instanceof Function
+true
+> a instanceof Object
+true
+```
+
+Funktionen haben einen Sonderstatus in JavaScript. Mehr dazu im nächsten Kapitel.
+
+---
+
+### `RegExp`
+
+```javascript
+var a = /abc/gi;
+```
+
+```javascript
+> typeof a
+"object" // in alten Browsern manchmal "function" :(
+> a instanceof RegExp
+true
+> a instanceof Object
+true
+```
+
+---
+
+## Zusammenfassung
+
+---
+
+### `typeof`
+
+Der `typeof`-Operator gibt den Datentyp als String zurück.
+
+---
+
+| Type | Result |
+|---------------|
+| undefined | "undefined" |
+| null | "object" <sup>*)</sup> |
+| boolean | "boolean" |
+| number | "number" |
+| string | "string" |
+| function object | "function" |
+| Any other object | "object" |
+
+---
+
+<cite>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof</cite>
+
+<sup>*) [The history of `typeof null`](http://www.2ality.com/2013/10/typeof-null.html)</sup>
+
+---
+
+### `instanceof`
+
+Der `instanceof`-Operator prüft, ob das referenzierte Objekt von dem gegebenen Konstruktor oder Super-Konstruktor erzeugt wurde.
+
+Alle Konstruktoren erben von `Object`.
+
+---
+
+## Lösungsstrategien
+
+---
+
+Nur Literale verwenden
+
+.flex-ltr[
+```javascript
+var a = 3;
+var b = "hi";
+var c = {};
+```
+
+.div[
+```javascript
+var a = new Number(3);
+var b = new String("hi");
+var c = new Object();
+```
+<div class="error-cross" style="width: 60%; margin-top: -1.6rem; margin-bottom: 1.4rem"></div>
+]
+]
+
+---
+
+Primitives mit `typeof` überprüfen
+
+```javascript
+var a = 3;
+
+if (typeof a === "number") {
+    ...
+}
+```
+
+---
+
+`instanceof` generell vermeiden
+
+[<small>Vor allem wenn `iframes` verwendet werden</small>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof#instanceof_and_multiple_context_%28e.g._frames_or_windows%29)
+
+---
+
+## Properties
+
+---
+
+### Statischer Zugriff
+
+```javascript
+myObj.someProp;
+```
+
+### Dynamischer Zugriff
+
+```javascript
+var key = "someProp";
+myObj[key];
+```
+
+---
+
+Der dynamische Zugriff kann zur Laufzeit nicht optimiert werden und ist daher deutlich langsamer als der statische.
+
+---
+
+### Neue Properties
+
+In JavaScript kann jedes Objekt zur Laufzeit erweitert werden
+
+[<small>Ausnahme: ES5-Features wie `Object.freeze()`</small>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)
+
+---
+
+```javascript
+> var cat = {};
+> cat
+{}
+```
+
+```javascript
+> cat.name = "Octocat"
+> cat;
+{ name: 'Octocat' }
+```
+
+---
+
+Objekte sind also assoziative Arrays bzw. Dictionaries
+
+---
+
+### Properties entfernen
+
+```javascript
+> cat.name = undefined
+> cat;
+{ name: undefined }
+```
+<div class="error-cross" style="width: 30%; margin-top: -1.6rem; margin-bottom: 2.5rem"></div>
+
+
+```javascript
+> delete cat.name
+> cat;
+{}
+```
+
+---
+
+### Hinweis
+
+Der `delete`-Operator entfernt nur Properties von einem Objekt. Variablen können nicht "entfernt" werden.
+
+```javascript
+> var a = 3;
+> delete a
+> a
+3
+```
+
+---
+
+Variablen müssen explizit auf `null` oder `undefined` gesetzt werden.
+
+```javascript
+> var a = 3;
+> a = null;
+> a
+null
+```
+
+---
+
+### Überprüfen von Properties
+
+```javascript
+if (typeof obj[key] === "undefined") {
+    ...
+}
+```
+<div class="error-cross" style="width: 30%; margin-top: -1.6rem; margin-bottom: 1.4rem"></div>
+
+---
+
+### Überprüfen von Properties
+
+```javascript
+if (obj.hasOwnProperty(key) === false) {
+    ...
+}
+```
+
+---
+
+```javascript
+var obj = {
+    a: undefined,
+    b: true
+};
+delete obj.b;
+```
+
+.flex-ltr[
+```javascript
+> typeof obj.a
+"undefined"
+> typeof obj.b
+"undefined"
+> typeof obj.c
+"undefined"
+```
+
+```javascript
+> obj.hasOwnProperty("a")
+true
+> obj.hasOwnProperty("b")
+false
+> obj.hasOwnProperty("c")
+false
+```
+]
+
+---
+
+**Generell gilt aber:**<br>
+Dynamische Objekte kann die JS-Engine nur wenig optimieren. Deshalb nur mit Bedacht einsetzen.
+
+---
+
+## Copy by value
+
+`undefined null boolean number string` werden bei Zuweisung kopiert
+
+```javascript
+> var a = 1;
+> var b = a;
+
+> a = 1000;           // a wird modifiziert
+> b                   // b bleibt gleich
+1
+```
+
+---
+
+## Copy by reference
+
+`Array Object Function Date RegExp` etc. erzeugen bei Zuweisung eine neue Referenz auf das **selbe** Objekt
+
+```javascript
+> var a = {};
+> var b = a;
+
+> a.hallo = "hallo";  // a wird modifiziert
+> b.hallo             // b wurde verändert
+"hallo"
+```
+
+---
+
+## Implizites Casting
+
+```javascript
+> "JavaScript ist " + 19 + " Jahre alt"
+> "JavaScript ist 19 Jahre alt"
+```
+
+```javascript
+> 3 + "3"
+"33"
+```
+
+---
+
+**Vor** einer Addition Nummern parsen:
+
+```javascript
+> 3 + Number("3") // ohne new!
+6
+
+> 3 + parseInt("3", 10)
+6
+```
+
+<small>(`10` bedeutet, dass es sich um eine Dezimalzahl handelt)</small>
+
+---
+
+## Loose equality vs. Strict equality
+
+```javascript
+> 3 == "3"
+true
+
+> 3 === "3"
+false
+```
+
+```javascript
+> "" == false
+true
+
+> "" === false
+false
+```
+
+---
+
+### Falsy values
+
+.flex-ltr[
+```javascript
+> Boolean(undefined)
+false
+> Boolean(null)
+false
+```
+
+```javascript
+> Boolean("")
+false
+> Boolean(0)
+false
+```
+]
+
+```javascript
+var someString = "";
+
+if (someString) {
+    // wird nie ausgeführt
+}
+```
+
+---
+
+## Lösungsstrategien
+
+---
+
+Immer mit `===` und `!==` überprüfen
+
+---
+
+Auch deshalb nur Literale verwenden
+
+```javascript
+3 == new Number(3)
+true
+
+3 === new Number(3)
+false
+```
+
+---
+
+**Ganz generell:**<br>
+Unnötige Typechecks vermeiden. Es gibt in JavaScript einfach keine Typsicherheit!
+
+---
+
+Übung: Types
+
+---
+
+<img src="../assets/img/the-good-2.jpg" style="height: 30vh">
+
+# Funktionen
+
+---
+
+## Syntax
+
+```javascript
+function a() {}
+
+var b = function () {};
+
+var c = function d() {};
+```
+
+---
+
+### Declaration
+
+```javascript
+function a() {}
+```
+
+Die Funktion kann in dieser Schreibweise bereits vor der Definition aufgerufen werden
+
+Stichwort: Hoisting
+
+---
+
+### Expression
+
+```javascript
+var a = function () {};
+var b = function c() {};
+```
+
+Ist erst verfügbar, nachdem die Expression ausgewertet wurde.
+
+---
+
+## Context
+
+`this` zeigt innerhalb einer Funktion auf den sog. **Context**
+
+```javascript
+function getContext() {
+    return this;
+}
+```
+
+---
+
+.alert[
+### Achtung
+]
+
+Der Context ändert sich, je nachdem, wie die Funktion aufgerufen wird!
+
+---
+
+## Invocation
+
+<span>1.</span> Wenn nicht anders angegeben, zeigt `this` auf das ["globale Objekt"](http://msdn.microsoft.com/en-us/library/ie/52f50e9t%28v=vs.94%29.aspx)
+
+---
+
+<span>2.</span> Wird die Funktion auf einem Objekt aufgerufen ...
+
+```javascript
+obj.fn();
+```
+
+... zeigt `this` auf das Objekt
+
+---
+
+<span>3.</span> Mit `.call()` bzw. `.apply()` lässt sich der Context explizit beim Aufruf definieren
+
+```javascript
+fn.call(context, arg1, arg2, arg3);
+fn.apply(context, args);
+```
+
+---
+
+<span>4.</span> `.bind()` bindet den Context (fast) unveränderbar
+
+```javascript
+var boundFn = fn.bind(context);
+```
+
+---
+
+<span>5.</span> Wird eine Funktion mit dem `new`-Operator aufgerufen, zeigt der Context **immer** auf ein neues Objekt
+
+```javascript
+new fn();
+```
+
+---
+
+| | Art des Aufrufs | Kontext |
+|-----------------------------|
+| 1 | `fn()` | Globales Objekt |
+| 2 | `obj.fn()` | `obj` |
+| 3 | `fn.call(ctx)`<br>`fn.apply(ctx)` | `ctx` |
+| 4 | `fn.bind(ctx)()` | `ctx` |
+| 5 | `new fn()` | `Neues Objekt` | 
+
+---
+
+## Arguments
+
+Funktionen akzeptieren jede Anzahl von Argumente
+
+```javascript
+function fn(a) {}
+
+fn(1);
+fn(1, 2);       // wirft keinen Fehler
+fn(1, 2, 3);    // wirft keinen Fehler
+```
+
+---
+
+Die spezielle Variable `arguments` innerhalb einer Funktion enthält alle übergebenen Argumente
+
+```javascript
+function fn() {
+    console.log(arguments);
+}
+
+fn("a", "b", "c");
+```
+
+---
+
+.alert[
+### Achtung
+]
+
+`arguments` sieht aus wie ein Array, ist aber keins
+
+---
+
+```javascript
+> arguments.length
+3
+> arguments[0]
+"a"
+> arguments[1]
+"b"
+```
+
+```javascript
+> arguments instanceof Array
+false
+> arguments.join()
+TypeError: Object #<Object> has no method 'join'
+```
+
+---
+
+So macht man aus `arguments` ein echtes Array
+
+```javascript
+> var args = Array.prototype.slice.call(arguments);
+> args.join();
+"abc"
+```
+
+---
+
+## Sichtbarkeiten & Scope
+
+Der Scope einer Funktion ist die Sammlung aller sichtbaren Variablen innerhalb der Funktion
+
+---
+
+```javascript
+var a;
+
+function fn() {
+    var b;
+}
+```
+
+| Variable | Sichtbarkeit |
+|------------------|
+| `a` | Global & innerhalb `fn` |
+| `fn` | Global & innerhalb `fn` |
+| `b` | Nur innerhalb `fn` |
+
+---
+
+Außerhalb eines Funktion-Scopes sind die Variablen nicht sichtbar
+
+```javascript
+function fn() {
+    var b = 2;
+}
+
+fn();
+console.log(b); // throws ReferenceError
+```
+
+---
+
+.alert[
+### Achtung
+]
+
+Wird die Variable ohne `var` verwendet, ist sie implizit global!
+
+```javascript
+function fn() {
+    b = 2;
+}
+
+fn();
+console.log(b); // returns 2
+```
+
+---
+
+Das ist oft die Ursache für schwer zu debuggende Fehler, deshalb **nie `var` vergessen!**
+
+<small>Am besten gleich [Strict-Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) verwenden</small>
+
+---
+
+## Verschachtelte Scopes
+
+---
+
+```javascript
+function fn1() {
+    var a;
+
+    function fn2() {
+        var b;
+    }
+}
+```
+
+.shrink[
+| Variable | Sichtbarkeit |
+|------------------|
+| `fn1` | Global, innerhalb `fn1` und `fn2` |
+| `a` | Innerhalb `fn1` und `fn2` |
+| `fn2` | Innerhalb `fn1` und `fn2` |
+| `b` | Nur innerhalb `fn2` |
+]
+
+---
+
+Verschachtelte Scopes machen Funktionen in JavaScript sehr mächtig
+
+---
+
+Denn solange `fn2` noch irgendwo referenziert wird, hat `fn2` Zugriff auf die Variable `a`
+
+---
+
+### Vergleiche:
+
+```javascript
+function fn1() {
+    var a;
+}
+
+fn1();
+// a ist jetzt unerreichbar
+```
+
+---
+
+```javascript
+function getIncrementor(start) {
+    return function () {
+        return start++;
+    };
+}
+
+var increment = getIncrementor(0);
+
+increment(); // 0
+increment(); // 1
+increment(); // 2
+```
+
+<small>(Sog. [Currying](http://en.wikipedia.org/wiki/Currying))</small>
+
+---
+
+Das macht sie nützlich als Callbacks
+
+```javascript
+function readConfig() {
+    var defaultConfig = {
+        port: 9999
+    };
+
+    fs.readFile("config.json", function (config) {
+        if (!config.hasOwnProperty("port")) {
+            config.port = defaultConfig.port;
+        }
+    });
+}
+```
+
+---
+
+Funktionen sind ["First-class citizens"](http://en.wikipedia.org/wiki/First-class_function)
+
+---
+
+```javascript
+fs.readFile("config.json", function (config) {
+    if (!config.hasOwnProperty("port")) {
+        config.port = defaultConfig.port;
+    }
+});
+```
+
+---
+
+Ebenfalls nützlich für [Array comprehensions](http://en.wikipedia.org/wiki/List_comprehension#JavaScript_1.7)
+
+```javascript
+["a", "b", "c"].map(function (letter) {
+    return letter.toUpperCase();
+});
+```
+
+---
+
+## Immediately-Invoked Function Expression (IIFE)
+
+Klammern um die Funktion machen die Declaration zu einer Expression
+
+
+```javascript
+(function fn(win) {
+    var secret = 123;
+})(window);
+
+typeof fn; // undefined
+typeof secret; // undefined
+```
+
+---
+
+Übung: Functions
+
+</textarea>
+
+    <script src="../bower_components/remark/out/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        highlightStyle: "ir_black"
+        //,ratio: '16:9'
+      });
+    </script>
+  </body>
+</html>
