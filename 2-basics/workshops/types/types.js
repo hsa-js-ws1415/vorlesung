@@ -12,6 +12,7 @@ describe("types", function () {
             expect(a).to.equal(undefined);
 
             /* ADD ONE LINE */
+            var a, b = new String(3), c = 4;
 
             expect(typeof b).to.equal("object");
             expect(b == 3).to.equal(true);
@@ -33,17 +34,17 @@ describe("types", function () {
          */
         it("should run without errors", function () {
             /* ADD ONE LINE */
-
+            var c = {"a": 1};
             expect(c).to.be.an.instanceof(Object);
             expect(c.a).to.equal(1);
 
             /* ADD ONE LINE */
-
+            c.a = undefined;
             expect(c.a).to.equal(undefined);
             expect(c.hasOwnProperty("a")).to.equal(true);
 
             /* ADD ONE LINE */
-
+            delete c.a
             expect(c.hasOwnProperty("a")).to.equal(false);
         });
         
@@ -57,23 +58,23 @@ describe("types", function () {
          */
         it("should run without errors", function () {
             /* ADD ONE LINE */
-
+            var d = [1, 2, 3], e = d;
             expect(d).to.eql([1, 2, 3]);
             expect(d === e).to.equal(true);
 
             /* ADD ONE LINE */
-
+            d.push(4);
             expect(d).to.eql([1, 2, 3, 4]);
             expect(e).to.eql([1, 2, 3, 4]);
 
             /* ADD ONE LINE */
-
+            e = [1, 2, 3, 4];
             expect(d).to.eql([1, 2, 3, 4]);
             expect(e).to.eql([1, 2, 3, 4]);
             expect(d === e).to.equal(false);
 
             /* ADD ONE LINE */
-
+            var f = new Array(100);
             expect(f).to.be.instanceOf(Array);
             expect(f.length).to.equal(100);
         });
@@ -84,7 +85,7 @@ describe("types", function () {
         
         it("should run without errors", function () {
             /* ADD ONE LINE */
-
+            var g = 3, h = "1";
             expect(typeof g).to.equal("number");
             expect(typeof h).to.equal("string");
             expect(g + h).to.equal("31");
@@ -97,17 +98,17 @@ describe("types", function () {
         
         it("should run without errors", function () {
             /* ADD ONE LINE */
-
+            var i = 0;
             expect(typeof i).to.equal("number");
             expect(i == false).to.equal(true);
 
             /* ADD ONE LINE */
-
+            var j = "";
             expect(typeof j).to.equal("string");
             expect(j == false).to.equal(true);
 
             /* ADD ONE LINE */
-
+            var k = null;
             var hasBeenCalled = false;
 
             expect(typeof k).to.equal("object");
