@@ -68,7 +68,7 @@ Raum J 2.18
 ### [SourceTree](http://www.sourcetreeapp.com/)
 
 - Git-GUI für alle Platformen (Win, OSX, Linux)
-- 
+
 ## Tutorials
 
 ### JavaScript
