@@ -12,7 +12,7 @@ Skripte & Beispiele zur Vorlesung JavaScript an der Hochschule Augsburg.
 - 5. Dezember 2014
 
 Immer 14.00 Uhr bis 18.50 Uhr
-Raum J 2.01
+Raum J 2.18
 
 ## Agenda
 
