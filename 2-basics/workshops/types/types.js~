@@ -118,7 +118,7 @@ describe("types", function () {
             expect(j == false).to.equal(true);
 
             /* ADD ONE LINE */
-	    var k = null;
+	    var k = undefined;
 
             var hasBeenCalled = false;
 

@@ -13,7 +13,7 @@ describe("functions", function () {
             expect(typeof a).to.equal("function");
 
             /* EDIT THIS LINE */
-            var a = function a() {};
+            var a = function () {};
 
             /* EDIT THIS LINE */
             var b = function c() {};
