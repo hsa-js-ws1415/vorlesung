@@ -954,6 +954,42 @@ Ist erst verfügbar, nachdem die Expression ausgewertet wurde.
 
 ---
 
+Funktionen sind ["First-class citizens"](http://en.wikipedia.org/wiki/First-class_function)
+
+---
+
+Das heißt, Funktionen können ...
+
+---
+
+... als Argument an andere Funktionen übergeben werden
+
+```javascript
+doSomething(function callback() {
+
+});
+```
+
+---
+
+... von Funktionen zurückgegeben werden
+
+```javascript
+function getFn() {
+    return function fn() {};
+}
+```
+
+---
+
+... in Variablen und Objekten gespeichert werden
+
+```javascript
+var fn = obj.fn = function () {};
+```
+
+---
+
 ## Context
 
 `this` zeigt innerhalb einer Funktion auf den sog. **Context**
@@ -978,6 +1014,10 @@ Der Context ändert sich, je nachdem, wie die Funktion aufgerufen wird!
 
 <span>1.</span> Wenn nicht anders angegeben, zeigt `this` auf das ["globale Objekt"](http://msdn.microsoft.com/en-us/library/ie/52f50e9t%28v=vs.94%29.aspx)
 
+```javascript
+fn();
+```
+
 ---
 
 <span>2.</span> Wird die Funktion auf einem Objekt aufgerufen ...
@@ -999,7 +1039,7 @@ fn.apply(context, args);
 
 ---
 
-<span>4.</span> `.bind()` bindet den Context (fast) unveränderbar
+<span>4.</span> `.bind()` erzeugt eine neue Funktion mit (fast) unveränderbaren Context
 
 ```javascript
 var boundFn = fn.bind(context);
@@ -1027,7 +1067,7 @@ new fn();
 
 ## Arguments
 
-Funktionen akzeptieren jede Anzahl von Argumente
+Funktionen akzeptieren jede Anzahl von Argumenten
 
 ```javascript
 function fn(a) {}
@@ -1209,82 +1249,64 @@ increment(); // 2
 
 ---
 
-## Immediately-Invoked Function Expression (IIFE)
+## Wie werden Funktionen eingesetzt?
 
-Klammern um die Funktion machen die Declaration zu einer Expression
+---
 
+### 1. Als ... Funktionen
 
 ```javascript
-(function fn(win) {
-var secret = 123;
-})(window);
+function doSomething() {}
 
-typeof fn; // undefined
-typeof secret; // undefined
+doSomething();
+doSomething();
+doSomething();
 ```
 
 ---
 
-Funktionen sind ["First-class citizens"](http://en.wikipedia.org/wiki/First-class_function)
+### 2. Als Konstruktoren
 
-<small>
+```javascript
+function Monster() {}
 
-> - the language supports passing functions as arguments to other functions,
-> - returning them as the values from other functions
-> - and assigning them to variables or storing them in data structures
-
-</small>
+var monster = new Monster();
+```
 
 ---
 
-Das macht sie nützlich als Callbacks
+### 3. Als Callbacks
 
 ```javascript
-var blogPostID = 1;
-var url = "/blog/post/" + blogPostId;
-
 server.request(url, function (err, blogPost) {
-    if (err) {
-      alert('Oh, no!');
-      return;
-    }
-    blog.render(blogPost);
+    ...
 });
 ```
 
 ---
 
-## Callbacks
-
->[Callback functions are probably the most widely used functional programming technique in JavaScript,
-> and they are literally in just about every piece of JavaScript [...]](http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/)
-
----
-
-Was würde es für den Beutzer dieser Anwendung bedeuten, wenn dieser Code syncron wäre?
-
-```javascript
-var blogPostID = 1;
-var url = "/blog/post/" + blogPostId;
-
-server.request(url, function (err, blogPost) {
-  if (err) {
-    alert('Oh, no!');
-    return;
-  }
-  blog.render(blogPost);
-});
-```
-
----
-
-Ebenfalls nützlich für [Array comprehensions](http://en.wikipedia.org/wiki/List_comprehension#JavaScript_1.7)
+### 4. Für [Array comprehensions](http://en.wikipedia.org/wiki/List_comprehension#JavaScript_1.7)
 
 ```javascript
 ["a", "b", "c"].map(function (letter) {
     return letter.toUpperCase();
 });
 ```
+
+---
+
+### 5. Als Sichtbarkeits-Begrenzer
+
+```javascript
+(function fn(win) {
+    var secret = 123;
+})(window);
+
+typeof fn; // undefined
+typeof secret; // undefined
+```
+
+<small>Immediately-Invoked Function Expression (IIFE)</small>
 
 ---
 
