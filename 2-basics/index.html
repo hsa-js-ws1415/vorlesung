@@ -1209,33 +1209,70 @@ increment(); // 2
 
 ---
 
-Das macht sie nützlich als Callbacks
+## Immediately-Invoked Function Expression (IIFE)
+
+Klammern um die Funktion machen die Declaration zu einer Expression
+
 
 ```javascript
-function readConfig() {
-    var defaultConfig = {
-        port: 9999
-    };
+(function fn(win) {
+var secret = 123;
+})(window);
 
-    fs.readFile("config.json", function (config) {
-        if (!config.hasOwnProperty("port")) {
-            config.port = defaultConfig.port;
-        }
-    });
-}
+typeof fn; // undefined
+typeof secret; // undefined
 ```
 
 ---
 
 Funktionen sind ["First-class citizens"](http://en.wikipedia.org/wiki/First-class_function)
 
+<small>
+
+> - the language supports passing functions as arguments to other functions,
+> - returning them as the values from other functions
+> - and assigning them to variables or storing them in data structures
+
+</small>
+
 ---
 
+Das macht sie nützlich als Callbacks
+
 ```javascript
-fs.readFile("config.json", function (config) {
-    if (!config.hasOwnProperty("port")) {
-        config.port = defaultConfig.port;
+var blogPostID = 1;
+var url = "/blog/post/" + blogPostId;
+
+server.request(url, function (err, blogPost) {
+    if (err) {
+      alert('Oh, no!');
+      return;
     }
+    blog.render(blogPost);
+});
+```
+
+---
+
+## Callbacks
+
+>[Callback functions are probably the most widely used functional programming technique in JavaScript,
+> and they are literally in just about every piece of JavaScript [...]](http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/)
+
+---
+
+Was würde es für den Beutzer dieser Anwendung bedeuten, wenn dieser Code syncron wäre?
+
+```javascript
+var blogPostID = 1;
+var url = "/blog/post/" + blogPostId;
+
+server.request(url, function (err, blogPost) {
+  if (err) {
+    alert('Oh, no!');
+    return;
+  }
+  blog.render(blogPost);
 });
 ```
 
@@ -1247,22 +1284,6 @@ Ebenfalls nützlich für [Array comprehensions](http://en.wikipedia.org/wiki/Lis
 ["a", "b", "c"].map(function (letter) {
     return letter.toUpperCase();
 });
-```
-
----
-
-## Immediately-Invoked Function Expression (IIFE)
-
-Klammern um die Funktion machen die Declaration zu einer Expression
-
-
-```javascript
-(function fn(win) {
-    var secret = 123;
-})(window);
-
-typeof fn; // undefined
-typeof secret; // undefined
 ```
 
 ---
