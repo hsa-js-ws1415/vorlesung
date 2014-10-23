@@ -221,29 +221,27 @@ describe("functions", function () {
          */
         it("should run without errors", function (done) {
              function giveMeA(callback) {
-                 setTimeout(callback, 500)
+                 setTimeout(callback, 500);
              }
+
+             /* ADD CODE HERE */
         });
 
     });
 
     describe("test 12", function () {
 
-        /**
-         * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
-         */
-        it("should run without errors", function (done) {
-            function callback(err, arr) {
-                expect(err).to.equal(null);
-                expect(arr).to.deep.equal(['C', 'B', 'A']);
-                done();
-            }
+        it("should run without errors", function () {
+            var arr;
 
-            function proccessArr(arr, callback) {
-                /* ADD SOME LINES */
-            }
+            // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+            // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
-            proccessArr(['a', 'b', 'c'], callback);
+            arr = ["a", "b", "c"]
+                .map(/* ADD CODE HERE */)
+                .reduce(/* ADD CODE HERE */);
+
+            expect(arr).to.equal("ABC");
         });
 
     });
