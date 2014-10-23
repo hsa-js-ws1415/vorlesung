@@ -214,4 +214,38 @@ describe("functions", function () {
 
     });
 
+    describe("test 11", function () {
+
+        /**
+         *  Führe done() in einem Callback aus, den du an giveMeA() übergibst.
+         */
+        it("should run without errors", function (done) {
+             function giveMeA(callback) {
+                 setTimeout(callback, 500)
+             }
+        });
+
+    });
+
+    describe("test 12", function () {
+
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+         */
+        it("should run without errors", function (done) {
+            function callback(err, arr) {
+                expect(err).to.equal(null);
+                expect(arr).to.deep.equal(['C', 'B', 'A']);
+                done();
+            }
+
+            function proccessArr(arr, callback) {
+                /* ADD SOME LINES */
+            }
+
+            proccessArr(['a', 'b', 'c'], callback);
+        });
+
+    });
+
 });
