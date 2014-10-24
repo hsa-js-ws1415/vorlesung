@@ -44,8 +44,7 @@ describe("functions", function () {
                 timesCalled++;
                 return this;
             }
-		    console.log(e());
-            expect(e()).to.equal(/* INSERT CODE HERE */);
+            expect(e()).to.equal(window);
             expect(timesCalled).to.equal(1);
         });
 
@@ -116,7 +115,7 @@ describe("functions", function () {
             };
 
             /* ADD ONE LINE */
-	    increment.bind(o.increment); //?
+	        function increment() {o.increment()};
 
             increment();
 
@@ -139,7 +138,7 @@ describe("functions", function () {
             doSomething = doSomething.bind(o);
 
             /* ADD ONE LINE */
-	    doSomething.apply(o); //?
+	        new doSomething();
 
             expect(o.number1).to.equal(1);
             expect(o.number2).to.equal(1);
