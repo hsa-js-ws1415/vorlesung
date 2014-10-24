@@ -11,6 +11,11 @@ describe("prototypes", function () {
         it("should run without errors", function () {
 
             /* ADD CODE HERE */
+            function Godzilla() {
+                Godzilla.prototype.health = 10;
+            };
+
+            godzilla = new Godzilla();
 
             expect(godzilla).to.be.an.instanceof(Godzilla);
             expect(godzilla.health).to.equal(10);
