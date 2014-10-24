@@ -7,16 +7,21 @@ describe("prototypes", function () {
     var godzilla2;
     
     describe("test 1", function () {
-        
+
         it("should run without errors", function () {
 
             /* ADD CODE HERE */
+            function Godzilla() {}
+            Godzilla.prototype.health = 10;
+
+            godzilla = new Godzilla();
+            /* END */
 
             expect(godzilla).to.be.an.instanceof(Godzilla);
             expect(godzilla.health).to.equal(10);
             expect(godzilla.hasOwnProperty("health")).to.equal(false);
         });
-        
+
     });
 
     describe("test 2", function () {
@@ -24,6 +29,12 @@ describe("prototypes", function () {
         it("should run without errors", function () {
 
             /* ADD CODE HERE */
+            function Godzilla() {}
+            Godzilla.prototype.health = 10;
+
+            godzilla = new Godzilla();
+            godzilla.health = 20;
+            /* END */
 
             expect(godzilla).to.be.an.instanceof(Godzilla);
             expect(godzilla.health).to.equal(20);
@@ -38,8 +49,15 @@ describe("prototypes", function () {
         it("should run without errors", function () {
 
             /* ADD CODE HERE */
+            function Godzilla() {}
+            Godzilla.prototype.victims;
 
-            expect(godzilla).to.be.an.instanceof(Godzilla);
+            godzilla1 = new Godzilla();
+            godzilla2 = new Godzilla();
+            /* END */
+
+
+            expect(godzilla1).to.be.an.instanceof(Godzilla);
             expect(godzilla1.victims).to.equal(godzilla2.victims);
         });
 
@@ -50,6 +68,11 @@ describe("prototypes", function () {
         it("should run without errors", function () {
 
             /* ADD CODE HERE */
+            function Godzilla() { this.victims = [] }
+
+            godzilla1 = new Godzilla();
+            godzilla2 = new Godzilla();
+            /* END */
 
             godzilla1.victims.push("Human");
 
@@ -64,6 +87,12 @@ describe("prototypes", function () {
         it("should run without errors", function () {
 
             /* ADD CODE HERE */
+            function Monster() {}
+            function Godzilla() {}
+            Godzilla.prototype = Object.create(Monster.prototype);
+
+            godzilla = new Godzilla();
+            /* END */
 
             expect(godzilla).to.be.an.instanceof(Godzilla);
             expect(godzilla).to.be.an.instanceof(Monster);
@@ -74,6 +103,7 @@ describe("prototypes", function () {
     describe("test 6", function () {
 
         it("should run without errors", function () {
+
             var hasBeenCalled = false;
 
             function Monster() {
@@ -82,6 +112,13 @@ describe("prototypes", function () {
             }
 
             /* ADD CODE HERE */
+            function Godzilla() {
+                Monster.apply(this);
+            }
+            Godzilla.prototype = Object.create(Monster.prototype);
+
+            godzilla = new Godzilla();
+            /* END */
 
             expect(godzilla).to.be.an.instanceof(Godzilla);
             expect(godzilla).to.be.an.instanceof(Monster);

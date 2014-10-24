@@ -13,10 +13,10 @@ describe("functions", function () {
             expect(typeof a).to.equal("function");
 
             /* EDIT THIS LINE */
-            var a = function () {};
+            function a() {};
 
             /* EDIT THIS LINE */
-            var b = function c() {};
+            var b = function () {}, c = b;
 
             expect(typeof b).to.equal("function");
             expect(typeof c).to.equal("function");
@@ -27,6 +27,7 @@ describe("functions", function () {
             }
 
             /* ADD ONE LINE */
+            var d = incrementNumber;
 
             d();
             expect(number).to.equal(1);
@@ -44,7 +45,7 @@ describe("functions", function () {
                 return this;
             }
 
-            expect(e()).to.equal(/* INSERT CODE HERE */);
+            expect(e()).to.equal(/* INSERT CODE HERE */window);
             expect(timesCalled).to.equal(1);
         });
 
@@ -64,6 +65,7 @@ describe("functions", function () {
             }
 
             /* ADD ONE LINE */
+            o.increment = increment, o.increment();
 
             expect(o.number1).to.equal(1);
             expect(o.number2).to.equal(1);
@@ -90,6 +92,7 @@ describe("functions", function () {
             }
 
             /* ADD ONE LINE */
+            o.decrement = decrement, o.decrement(), o.decrement();
 
             o.increment();
 
@@ -113,6 +116,7 @@ describe("functions", function () {
             };
 
             /* ADD ONE LINE */
+            function increment() {o.increment()};
 
             increment();
 
@@ -135,6 +139,7 @@ describe("functions", function () {
             doSomething = doSomething.bind(o);
 
             /* ADD ONE LINE */
+            new doSomething();
 
             expect(o.number1).to.equal(1);
             expect(o.number2).to.equal(1);
@@ -153,7 +158,7 @@ describe("functions", function () {
 
             function doSomething() {
                 /* ADD ONE LINE */
-
+                return o2 = o1;
             }
 
             doSomething(o1);
@@ -168,7 +173,7 @@ describe("functions", function () {
         it("should run without errors", function () {
             function returnLength() {
                 /* ADD ONE LINE */
-
+                return arguments.length;
             }
 
             expect(returnLength("a", "b", "c")).to.equal(3);
@@ -182,6 +187,7 @@ describe("functions", function () {
         it("should run without errors", function () {
             function doSomething() {
                 /* ADD ONE LINE */
+                return i = 0;
 
             }
             doSomething();
@@ -199,6 +205,7 @@ describe("functions", function () {
 
             function increment() {
                 /* ADD ONE LINE */
+                return;
 
                 i++;
                 j++;
@@ -225,6 +232,8 @@ describe("functions", function () {
              }
 
              /* ADD CODE HERE */
+            giveMeA(done);
+
         });
 
     });
@@ -238,8 +247,8 @@ describe("functions", function () {
             // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 
             arr = ["a", "b", "c"]
-                .map(/* ADD CODE HERE */)
-                .reduce(/* ADD CODE HERE */);
+                .map(/* ADD CODE HERE */ function (letter) { return letter.toUpperCase(); })
+                .reduce(/* ADD CODE HERE */ function (prev, letter) { return prev+letter; }, "");
 
             expect(arr).to.equal("ABC");
         });
