@@ -239,7 +239,7 @@ describe("functions", function () {
 
             arr = ["a", "b", "c"]
                 .map(/* ADD CODE HERE */)
-                .reduce(/* ADD CODE HERE */);
+                .reduce(/* ADD CODE HERE */, "");
 
             expect(arr).to.equal("ABC");
         });
