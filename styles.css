@@ -137,6 +137,7 @@ a {
 #slide cite {
     font-size: 0.7rem;
     color: #6d6d6d;
+    word-break: break-word;
 }
 
 #slide blockquote cite {
