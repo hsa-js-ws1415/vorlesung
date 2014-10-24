@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html id="slide">
+  <head>
+    <title>Callbacks</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../styles.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+<textarea id="source">
+
+    name: cover
+    background-image: url(../assets/img/background.png)
+
+    # Callbacks
+
+    .slide-cover[
+    JavaScript<br>
+    Wintersemester 2014/2015<br>
+    HS Augsburg
+
+    Johannes Ewald<br>
+    Paul Torka<br>
+    ]
+
+    ---
+    layout: true
+    class: center, middle
+
+    .slide-header-left[
+    Callbacks
+    ]
+    .slide-header-right[
+    JavaScript WS 14/15 HSA
+    ]
+
+    ---
+
+    <img src="../assets/img/callbacks.jpg" style="height: 50vh">
+
+    # Callbacks
+
+    ---
+
+    Funktionen sind ["First-class citizens"](http://en.wikipedia.org/wiki/First-class_function)
+
+    ---
+
+    Das macht sie nützlich als Callbacks bei asynchronen Aufgaben
+
+    ```javascript
+    server.request(url, function (err, blogPost) {
+        if (err) {
+            alert('Oh, no!');
+            return;
+        }
+        blog.render(blogPost);
+    });
+    ```
+
+    ---
+
+    Und über den Scope können Funktionen sich Zustände "merken"
+
+    ```javascript
+    var count = 0;
+
+    btn.addEventListener("click", function () {
+        count++;
+        console.log("Current count is " + count);
+    });
+    ```
+
+    ---
+
+    > Callback functions are probably the most widely used functional programming technique in JavaScript,
+    and they are literally in just about every piece of JavaScript [...]
+
+    <cite>http://javascriptissexy.com/understand-javascript-callback-functions-and-use-them/</cite>
+
+    ---
+
+    ## Typische Callbacks
+
+    ---
+
+    ### 1. [Timers]((https://developer.mozilla.org/en-US/Add-ons/Code_snippets/Timers)
+
+    ```javascript
+    setTimeout(function () {
+        ...
+    }, 500);
+    ```
+
+    ```javascript
+    setInterval(function () {
+        ...
+    }, 500);
+    ```
+
+    ---
+
+    ### 2. Event-Listeners
+
+    ```javascript
+    button.addEventListener("click", function () {
+        ...
+    });
+    ```
+
+    ---
+
+    ### 3. Asynchrone Funktionen
+
+    ```javascript
+    server.request(url, function (err, blogPost) {
+        if (err) {
+            alert('Oh, no!');
+            return;
+        }
+        blog.render(blogPost);
+    });
+    ```
+
+    ---
+
+    ### Die Konvention
+
+    Ist eine Funktion asynchron, so wird als **letztes** Argument ein Callback übergeben
+
+    ---
+
+    Doch wie sieht es mit möglichen Fehlern aus?
+
+    ---
+
+    ```javascript
+    try {
+        server.request(url, function (blogPost) {
+            ...
+        });
+    } catch (err) {
+        ...
+    }
+    ```
+
+    # ?
+
+    ---
+
+    .alert[
+    ### Achtung
+    ]
+
+    `try/catch` funktioniert bei asynchronen Funktionen nicht
+
+    ---
+
+    ### Die Konvention
+
+    Ein möglicher Fehler wird im Callback als **erstes** Argument übergeben
+
+    ```javascript
+    server.request(url, function (err, blogPost) {
+        if (err) {
+            alert('Oh, no!');
+            return;
+        }
+        blog.render(blogPost);
+    });
+    ```
+
+    ---
+
+    Diese Konvention stammt von node.js
+
+    ---
+
+    ## Probleme
+
+    Die sogenannte Callback-Hell!
+
+    ```javascript
+    p_client.open(function(err, p_client) {
+        p_client.dropDatabase(function(err, done) {
+            p_client.createCollection('test_custom_key', function(err, collection) {
+                ...
+            });
+        });
+    });
+    ```
+
+    ---
+
+    Der Callback ist deshalb nur die einfachste Form von asynchronem JavaScript
+
+</textarea>
+
+    <script src="../bower_components/remark/out/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        highlightStyle: "ir_black"
+        //,ratio: '16:9'
+      });
+    </script>
+  </body>
+</html>
