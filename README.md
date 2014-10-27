@@ -19,7 +19,7 @@ Raum J 2.18
 - Einführung 17.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/1-einfuehrung/#1)
 - Basics 17.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/2-basics/#1)
 - Prototypes 24.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/3-prototypes/#1)
-- Callbacks 24.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/4-callbacks/#1)
+- Callbacks 24.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/4callbacks/#1)
 - Promises 31.10
 - Modules 31.10
 - DOM 28.11
