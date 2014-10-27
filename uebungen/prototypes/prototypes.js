@@ -39,7 +39,7 @@ describe("prototypes", function () {
 
             /* ADD CODE HERE */
 
-            expect(godzilla).to.be.an.instanceof(Godzilla);
+            expect(godzilla1).to.be.an.instanceof(Godzilla);
             expect(godzilla1.victims).to.equal(godzilla2.victims);
         });
 
