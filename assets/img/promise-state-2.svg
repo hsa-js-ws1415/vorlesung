@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 416 412.3" enable-background="new 0 0 416 412.3" xml:space="preserve">
+<g>
+	<circle fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="203.5" cy="85.5" r="81.5"/>
+	<rect x="65.2" y="71.9" fill="none" width="276.5" height="79"/>
+	<text transform="matrix(1 0 0 1 140.9928 96.281)" font-family="'GraublauSans-Bold'" font-size="36">pending</text>
+</g>
+<g>
+	<circle fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="86.1" cy="324.4" r="81.5"/>
+	<rect x="-52.2" y="310.8" fill="none" width="276.5" height="79"/>
+	<text transform="matrix(1 0 0 1 25.3671 335.247)" font-family="'GraublauSans-Bold'" font-size="36">fulfilled</text>
+</g>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="205.5" y1="167.6" x2="205.5" y2="220.8"/>
+<g>
+	<g>
+		<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="206.4" y1="220.4" x2="155.7" y2="271.1"/>
+		<g>
+			<polygon points="153.2,266.5 150.6,276.1 160.2,273.6 			"/>
+		</g>
+	</g>
+</g>
+</svg>

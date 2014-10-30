@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html id="slide">
+  <head>
+    <title>Modules</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../styles.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+<textarea id="source">
+
+    name: cover
+    background-image: url(../assets/img/background.png)
+
+    # Modules
+
+    .slide-cover[
+    JavaScript<br>
+    Wintersemester 2014/2015<br>
+    HS Augsburg
+
+    Johannes Ewald<br>
+    Paul Torka<br>
+    ]
+
+    ---
+    layout: true
+    class: center, middle
+
+    .slide-header-left[
+    Modules
+    ]
+    .slide-header-right[
+    JavaScript WS 14/15 HSA
+    ]
+
+    ---
+
+    <img src="../assets/img/the-scream.jpg">
+
+    ## In JavaScript gibt es nativ (noch) keine Module
+
+    ---
+
+    ## Modulsysteme aus der Community
+
+    - [CommonJS](http://nodejs.org/api/modules.html)
+    - [Asynchronous Module Definition (AMD)](http://requirejs.org/docs/whyamd.html#amd)
+
+    ---
+
+    ### CommonJS
+
+    ---
+
+    Export über `module.exports`
+
+    ```javascript
+    module.exports = ...
+    ```
+
+    ---
+
+    `math.js`
+
+    ```javascript
+    module.exports = {
+        add: function (a, b) {
+            return a + b;
+        },
+        subtract: function (a, b) {
+            return a - b;
+        }
+    };
+    ```
+
+    ---
+
+    `Circle.js`
+
+    ```javascript
+    function Circle(radius) {
+        this.radius = radius;
+    }
+
+    Circle.prototype.radius = null;
+    Circle.prototype.area = function () { ... };
+    Circle.prototype.circumference = function () { ... };
+
+    module.exports = Circle;
+    ```
+
+    ---
+
+    Nachladen von anderen Modulen über `require()`
+
+    ```javascript
+    var math = require("./math.js");
+    var Circle = require("../objects/Circle.js");
+    ```
+
+    ---
+
+    ### CommonJS
+
+    - Wird in node.js verwendet
+    - Lädt Module **synchron** von der Festplatte nach
+    - Kann deswegen nicht ohne weiteres im Browser verwendet werden
+
+    ---
+
+    ### AMD
+
+    ---
+
+    Module werden über `define()` definiert
+
+    ```javascript
+    define(function () {
+        ...
+    });
+    ```
+
+    ---
+
+    Export über `return`
+
+    ```javascript
+    define(function () {
+        return ...
+    });
+    ```
+
+    ---
+
+    `math.js`
+
+    ```javascript
+    define(function () {
+        return {
+            add: function (a, b) {
+                return a + b;
+            },
+            subtract: function (a, b) {
+                return a - b;
+            }
+        };
+    });
+    ```
+
+    ---
+
+    `Circle.js`
+
+    ```javascript
+    define(function () {
+        function Circle(radius) {
+            this.radius = radius;
+        }
+
+        Circle.prototype.radius = null;
+        Circle.prototype.area = function () { ... };
+        Circle.prototype.circumference = function () { ... };
+
+        return Circle;
+    });
+    ```
+
+    ---
+
+    Als erstes Argument wird eine `require()`-Funktion übergeben
+
+    ```javascript
+    define(function (require) {
+        var math = require("./math.js");
+        var Circle = require("../objects/Circle.js");
+    });
+    ```
+
+    ---
+
+    ### AMD
+
+    - Kann im Browser verwendet werden
+    - Module werden **asynchron** vom Server nachgeladen
+
+    ---
+
+    ### Setup: AMD
+
+    [Anleitung](http://requirejs.org/docs/start.html)
+
+    ---
+
+    ### Setup: CommonJS
+
+    CommonJS-Module können mit [webpack](http://webpack.github.io/) auch Browser-fähig gemacht werden
+
+    ---
+
+    - [node.js installieren](http://nodejs.org/)
+    - In der Kommandozeile:
+
+    ```javascript
+    npm install -g webpack
+    ```
+
+    - Dann `bundle.js` erzeugen
+
+    ```javascript
+    webpack ./main.js ./bundle.js --watch
+    ```
+
+    ---
+
+    ```html
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>My Project</title>
+            <script src="./bundle.js"></script>
+        </head>
+        <body></body>
+    </html>
+    ```
+
+
+
+</textarea>
+
+    <script src="../bower_components/remark/out/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        highlightStyle: "ir_black"
+        //,ratio: '16:9'
+      });
+    </script>
+  </body>
+</html>

@@ -49,25 +49,15 @@ Raum J 2.18
 
 ## Git
 
-### [GitHub for Windows](https://windows.github.com/)
+### [SourceTree](http://www.sourcetreeapp.com/)
 
-- Grafische Oberfläche für Git, um GitHub-Repositories zu klonen
-- Benötigt GitHub Account
-
-### [GitHub for Mac](https://mac.github.com/)
-
-- Grafische Oberfläche für Git, um GitHub-Repositories zu klonen
-- Benötigt GitHub Account
+- Git-GUI für alle Platformen (Win, OSX, Linux)
 
 ### [Git](http://git-scm.com/downloads)
 
 - Git Client für alle Platformen (Win, OSX, Linux)
 - [Set up git](https://help.github.com/articles/set-up-git)
 - `git clone <repo url>`
-
-### [SourceTree](http://www.sourcetreeapp.com/)
-
-- Git-GUI für alle Platformen (Win, OSX, Linux)
 
 ## Tutorials
 

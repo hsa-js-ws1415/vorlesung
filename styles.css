@@ -103,14 +103,10 @@ a {
 }
 
 #slide ul, #slide ol, #slide p, #slide pre,
-#slide h1, #slide h2, #slide h3,
+#slide h2, #slide h3,
 #slide h4, #slide h5, #slide h6 {
-    margin-top: 1rem;
-    margin-bottom: 0;
-}
-
-#slide .slide-header-right  + * {
     margin-top: 0;
+    margin-bottom: 1rem;
 }
 
 #slide ul, #slide ol {
@@ -233,6 +229,10 @@ a {
 
 #slide .shrink {
     zoom: 0.8;
+}
+
+#slide .shrink-code {
+    transform: scale(0.7);
 }
 
 #slide .alert {
