@@ -28,6 +28,7 @@ Raum J 2.18
 ## Aufgaben
 
 - [Aufgabe 1](https://github.com/hsa-js-ws1415/aufgaben/tree/master/aufgabe-1)
+- [Aufgabe 2](https://github.com/hsa-js-ws1415/aufgaben/tree/master/aufgabe-2)
 
 ## IDE
 
