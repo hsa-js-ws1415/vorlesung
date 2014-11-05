@@ -81,10 +81,10 @@ Selbsterklärend
 [Try Git auf der Codeschool](http://www.codeschool.com/courses/try-git)<br>
 Sehr schönes, interaktives Tutorial. Ihr könnt euch dort mit eurem GitHub-Account einloggen. Kann ich jedem Git-Anfänger wärmstens empfehlen.
 
-[Die wichtigsten Befehle](http://rogerdudler.github.io/git-guide/index.de.html)
+[Die wichtigsten Befehle](http://rogerdudler.github.io/git-guide/index.de.html)<br>
 Das TLDR; für Git
 
-[Video-Tutorial](http://www.youtube.com/watch?v=Fwdg8-thBAc)
+[Video-Tutorial](http://www.youtube.com/watch?v=Fwdg8-thBAc)<br>
 Für Lesefaule
 
 [Git Ready](http://de.gitready.com/)<br>
