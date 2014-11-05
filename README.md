@@ -64,7 +64,7 @@ Raum J 2.18
 
 ### JavaScript
 
-[Code cademy](http://www.codecademy.com/en/tracks/javascript)<br>
+[Code academy](http://www.codecademy.com/en/tracks/javascript)<br>
 Für Anfänger
 
 [A re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)<br>
@@ -80,6 +80,12 @@ Selbsterklärend
 
 [Try Git auf der Codeschool](http://www.codeschool.com/courses/try-git)<br>
 Sehr schönes, interaktives Tutorial. Ihr könnt euch dort mit eurem GitHub-Account einloggen. Kann ich jedem Git-Anfänger wärmstens empfehlen.
+
+[Die wichtigsten Befehle](http://rogerdudler.github.io/git-guide/index.de.html)
+Das TLDR; für Git
+
+[Video-Tutorial](http://www.youtube.com/watch?v=Fwdg8-thBAc)
+Für Lesefaule
 
 [Git Ready](http://de.gitready.com/)<br>
 Alles, was man über Git wissen muss. Es gibt verschiedene Bereiche für Anfänger, Fortgeschrittene und Experten.
