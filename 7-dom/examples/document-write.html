@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <textarea id="textarea"></textarea>
+    <button id="button">document.write()</button>
+    <script>
+        var textarea = document.getElementById("textarea");
+        var button = document.getElementById("button");
+
+        button.addEventListener("click", function () {
+            document.write(textarea.value);
+        });
+    </script>
+</body>
+</html>

@@ -263,3 +263,13 @@ a {
     background: red;
     transform: translateY(-0.2em) rotateZ(-45deg);
 }
+
+#slide .full-screen {
+    padding: 0;
+}
+
+#slide .full-screen .slide-header-left,
+#slide .full-screen .slide-header-right,
+#slide .full-screen .remark-slide-number {
+    display: none;
+}
