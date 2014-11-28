@@ -3,6 +3,8 @@ Vorlesung
 
 Skripte & Beispiele zur Vorlesung JavaScript an der Hochschule Augsburg.
 
+## Abgabe der Projektarbeit: Spätestens 23. Dezember 2014, 23.59 Uhr
+
 ## Termine
 
 - 17. Oktober 2014
@@ -22,7 +24,7 @@ Raum J 2.18
 - Callbacks 24.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/4-callbacks/#1)
 - Promises 31.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/5-promises#1)
 - Modules 31.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/6-modules/#1)
-- DOM 28.11
+- DOM 28.11 [Skript](http://hsa-js-ws1415.github.io/vorlesung/7-dom//#1)
 - Harmony (ECMAScript 6) 5.12
 
 ## Aufgaben
