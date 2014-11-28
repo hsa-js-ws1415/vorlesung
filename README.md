@@ -3,7 +3,7 @@ Vorlesung
 
 Skripte & Beispiele zur Vorlesung JavaScript an der Hochschule Augsburg.
 
-## Abgabe der Projektarbeit: Spätestens 23. Dezember 2014, 23.59 Uhr
+## Abgabe der Projektarbeit:<br>Spätestens 23. Dezember 2014, 23.59 Uhr
 
 ## Termine
 
