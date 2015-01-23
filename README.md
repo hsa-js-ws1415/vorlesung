@@ -25,7 +25,7 @@ Raum J 2.18
 - Promises 31.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/5-promises#1)
 - Modules 31.10 [Skript](http://hsa-js-ws1415.github.io/vorlesung/6-modules/#1)
 - DOM 28.11 [Skript](http://hsa-js-ws1415.github.io/vorlesung/7-dom/#1)
-- Harmony (ECMAScript 6) 5.12
+- Harmony (ECMAScript 6) 5.12 [Skript](http://hsa-js-ws1415.github.io/vorlesung/8-harmony/#1)
 
 ## Aufgaben
 
